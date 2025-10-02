@@ -1,0 +1,396 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+
+body {
+    background-color: #FFFFFF;
+    color: #000000;
+    font-family: "Figtree", Sans-serif;
+    margin: 0;
+}
+
+.navbar {
+    background-color: #FFFFFF;
+    padding: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    flex-wrap: wrap;
+    position: relative;
+}
+
+.navbar-brand {
+    display: flex;
+    align-items: center;
+    flex-shrink: 0;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.navbar a {
+    font-family: "Roboto", Sans-serif;
+    color: #273171;
+    text-decoration: none;
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+    white-space: nowrap;
+}
+
+.navbar a:hover {
+    color: #6EC1E4;
+}
+
+.navbar a.active {
+    font-weight: bold;
+    text-decoration: underline;
+}
+
+.logo {
+    width: auto;
+    height: 35px;
+    margin-right: 2rem;
+}
+
+.talk2docs_logo {
+    display: flex;
+    justify-content: flex-start;
+    /* Aligns to left */
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.talk2docs_logo img {
+    height: 80px;
+    width: auto;
+    max-width: 100%;
+}
+
+/* Optional: Add shadow or border for visual appeal */
+.talk2docs_logo img {
+    filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+    /* or */
+    /* border-radius: 8px; */
+    /* border: 2px solid #f0f0f0; */
+}
+
+/* Mobile hamburger menu */
+.navbar-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    color: #273171;
+    cursor: pointer;
+    padding: 0.5rem;
+}
+
+.navbar-toggle:hover {
+    color: #6EC1E4;
+    background-color: transparent;
+}
+
+/* Responsive breakpoints */
+@media screen and (max-width: 768px) {
+    .navbar {
+        padding: 0.5rem 1rem;
+        margin-bottom: 1rem;
+        margin-top: 1rem;
+    }
+
+    .navbar-toggle {
+        display: block;
+    }
+
+    .navbar-nav {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        margin-top: 1rem;
+        background-color: #FFFFFF;
+        border-top: 1px solid #e0e0e0;
+        padding-top: 1rem;
+    }
+
+    .navbar-nav.active {
+        display: flex;
+    }
+
+    .navbar a {
+        padding: 0.75rem 0;
+        border-bottom: 1px solid #f0f0f0;
+        width: 100%;
+        text-align: left;
+        margin: 0;
+    }
+
+    .navbar a:last-child {
+        border-bottom: none;
+    }
+
+    .logo {
+        height: 30px;
+        margin-right: 1rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        padding: 0.5rem;
+    }
+
+    .navbar a {
+        font-size: 0.85rem;
+        padding: 0.6rem 0;
+    }
+
+    .logo {
+        height: 25px;
+        margin-right: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .navbar {
+        padding: 0.75rem 1rem;
+    }
+
+    .navbar a {
+        margin-left: 0.5rem;
+        margin-right: 1rem;
+        font-size: 0.85rem;
+    }
+
+    .logo {
+        margin-right: 2rem;
+    }
+}
+
+@media screen and (min-width: 1025px) {
+    .navbar a {
+        margin-left: 1rem;
+        margin-right: 1.5rem;
+    }
+
+    .logo {
+        margin-right: 4rem;
+        margin-left: 2rem;
+    }
+}
+
+/* Rest of your existing styles */
+h1,
+h2 {
+    color: #404040;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+input[type="text"],
+textarea {
+    width: 100%;
+    padding: 0.5rem;
+    border: 2px solid #007aff;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+    box-sizing: border-box;
+}
+
+input[type="file"] {
+    margin-bottom: 1rem;
+}
+
+button {
+    background-color: #ed5ca1;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #00BDF2;
+}
+
+.alert {
+    padding: 1rem;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.alert.success {
+    background-color: #e6f3ff;
+    color: #007aff;
+}
+
+.alert.error {
+    background-color: #ffe6e6;
+    color: #d32f2f;
+}
+
+.alert.warning {
+    background-color: #fff3e0;
+    color: #f57c00;
+}
+
+#content {
+    min-height: 300px;
+}
+
+.loader {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    margin-top: 1rem;
+}
+
+.loader::before,
+.loader::after {
+    content: "";
+    grid-area: 1/1;
+    --c: no-repeat radial-gradient(farthest-side, #25b09b 92%, #0000);
+    background:
+        var(--c) 50% 0,
+        var(--c) 50% 100%,
+        var(--c) 100% 50%,
+        var(--c) 0 50%;
+    background-size: 12px 12px;
+    animation: l12 1s infinite;
+}
+
+.loader::before {
+    margin: 4px;
+    filter: hue-rotate(45deg);
+    background-size: 8px 8px;
+    animation-timing-function: linear;
+}
+
+@keyframes l12 {
+    100% {
+        transform: rotate(.5turn)
+    }
+}
+
+.result {
+    margin-top: 1rem;
+    background-color: #FFFFFF;
+    color: #000000;
+}
+
+.company {
+    color: #00BDF2;
+}
+
+.cursor {
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+/*****************************/
+.custom-file-upload {
+    border-radius: 8px;
+    background-color: white;
+    text-align: left;
+
+}
+
+.file-upload-button {
+    display: inline-block;
+    padding: 12px 24px;
+    background-color: #3373bb;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s, transform 0.1s;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.file-upload-button:hover {
+    background-color: #004399;
+    transform: translateY(-1px);
+}
+
+.file-upload-button:active {
+    transform: translateY(0);
+}
+
+input[type="file"] {
+    display: none;
+}
+
+.file-list {
+    margin-top: 15px;
+    text-align: left;
+    max-height: 150px;
+    overflow-y: auto;
+}
+
+.file-list ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.file-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    font-size: 14px;
+    color: #333;
+}
+
+.file-list li:last-child {
+    border-bottom: none;
+}
+
+.file-list p {
+    color: #666;
+    font-style: italic;
+}
+
+.delete-file {
+    background-color: white;
+    color: #ff4d4d;
+    border: none;
+    border-radius: 12px;
+    width: 24px;
+    height: 24px;
+    line-height: 24px;
+    cursor: pointer;
+    font-size: 12px;
+    padding: 0;
+    transition: background-color 0.3s;
+}
+
+.delete-file:hover {
+    background-color: rgb(199, 196, 196);
+}

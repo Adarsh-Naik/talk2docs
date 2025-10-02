@@ -1,0 +1,78 @@
+<!-- This is the main HTML file for the Talk2Docs backend.
+It serves as a placeholder and might be used for static content or initial setup.
+Currently, it only contains a comment indicating its file path.
+Future development may include adding actual HTML content, scripts, or links to other resources.
+-->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>talk2docs</title>
+    <link rel="stylesheet" href="static/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Figtree:ital,wght@0,300..900;1,300..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+
+<body>
+    <!-- Responsive Navbar -->
+    <nav class="navbar">
+        <div class="navbar-brand">
+            <img src="https://remiges.tech/wp-content/uploads/2024/04/Remiges-logo-2048x403.png" alt="Logo"
+                class="logo" />
+        </div>
+
+        <button class="navbar-toggle" onclick="toggleMenu()">☰</button>
+
+        <div class="navbar-nav" id="navbarNav">
+            <a href="#ask_question" onclick="showPage('ask_question')" class="active">Ask a Question</a>
+            <a href="#ingest_multiple" onclick="showPage('ingest_multiple')">Upload Documents</a>
+            <a href="#image" onclick="showPage('image')">Upload Image</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="container">
+        <div class="talk2docs_logo">
+            <img src="static/talk2docs.png" alt="talk2docs Logo">
+        </div>
+        <p>Retrieval Engine For Your Assistance</p>
+        <br />
+        <div id="content"></div>
+    </div>
+
+    <!-- Responsive Navbar Script -->
+    <script>
+        function toggleMenu() {
+            const navbarNav = document.getElementById("navbarNav");
+            navbarNav.classList.toggle("active");
+        }
+
+        document.querySelectorAll(".navbar-nav a").forEach((link) => {
+            link.addEventListener("click", () => {
+                document.getElementById("navbarNav").classList.remove("active");
+            });
+        });
+
+        document.addEventListener("click", (e) => {
+            const navbar = document.querySelector(".navbar");
+            const navbarNav = document.getElementById("navbarNav");
+
+            if (
+                !navbar.contains(e.target) &&
+                navbarNav.classList.contains("active")
+            ) {
+                navbarNav.classList.remove("active");
+            }
+        });
+    </script>
+
+    <script src="static/script.js"></script>
+</body>
+
+</html>

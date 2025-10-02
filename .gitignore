@@ -1,0 +1,50 @@
+# ---- Python / FastAPI backend ----
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+*.sqlite3
+*.db
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# Test / cache files
+*.pytest_cache/
+.mypy_cache/
+.pytest_cache/
+.dmypy.json
+.cache/
+*.coverage
+coverage/
+
+# FastAPI / Uvicorn
+*.pid
+
+# ---- Node / Next.js frontend ----
+frontend/node_modules/
+frontend/.next/
+frontend/out/
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Dependency files backup
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# ---- Environment files ----
+.env
+.env.*.local
+
+# ---- OS junk ----
+.DS_Store
+Thumbs.db
+
