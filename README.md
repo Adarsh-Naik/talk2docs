@@ -1,6 +1,3 @@
-# Github: 
-https://github.com/Adarsh-Naik/talk2docs.git
-
 => Meory + Citation
 
 # Run Backend
